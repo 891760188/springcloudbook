@@ -1,0 +1,15 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+  ### 自己是注册中心，不向自己注册，不从注册中心获取数据
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    ###Eureka Server 的自我保护模式是开启的，此处关闭  如果 Eureka Serve 接收到的服务续约低于为该值配置的百分比（默认为 15 分钟内低于 85% ），则服务器开启自我保护模式，即不再剔除注册列表的信息
+    enable-self-preservation: false

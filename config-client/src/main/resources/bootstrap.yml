@@ -1,0 +1,12 @@
+###bootstrap相对application有优先的执行顺序
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+    ### 向uri: http://localhost:8769的配置中心取配置信息如果没有读取成功，则执行快速失败（ fail-fast ），读取的dev文件
+      uri: http://localhost:8769
+      fail-fast: true
+  profiles:
+    active: dev
+

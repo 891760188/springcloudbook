@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/shared
+  profiles:
+     ### 通过spring.profiles.active=native来配置从本地读取配置，读取配的路径为classpath下的hared目录
+     active: native
+  application:
+    name: config-server
+
+server:
+  port: 8769
+
+

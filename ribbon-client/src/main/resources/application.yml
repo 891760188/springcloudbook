@@ -1,0 +1,11 @@
+### 通过stores.ribbon.listOfServers 来配 这些服务实例的 Uri ，
+stores:
+  ribbon:
+    listOfServers: example.com,google.com
+
+ribbon:
+  eureka:
+  ### 禁止调用 Eureka Client 获取注册列表
+   enabled: false
+server:
+  port: 8769
